@@ -57,6 +57,7 @@ app.listen(port, () => {
 
 app.use('/read/username', addMsgToRequest);
 app.get('/read/username/:name', (req, res) => {
+  console.log(req);
   let usernames = req.users.filter(function(user) {
     return user.username == req.params.name;
   });
